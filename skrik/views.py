@@ -6,7 +6,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 import subprocess
 
-
 import random
 import MySQLdb 
 import json
@@ -26,13 +25,18 @@ def runquery(query):
 
   try:
     cursor.execute(query)
-    result = cursor.fetchone()
+    if cursor.rowcount == 0:
+      result = ""
+    else:
+      result = cursor.fetchone()
     conn.commit()
   except:
     conn.rollback()
     return sys.exc_info()
 
   conn.close()
+  
+  
   return result
 
 
@@ -54,11 +58,39 @@ def runquery_multiple(query):
   conn.close()
   return result
 
+
+
+
 # urls.py-Related functions
 ####
 
 @csrf_exempt
-def getnew_userid(self):
+def getnew_userid(self, *args, **kwargs):
+  useremail_dj = kwargs.pop('useremail', None)
+  query_existing = ('select id from skrik.user where email="' + str(useremail_dj) + '";')
+  result = runquery(query_existing);
+  if result == "":
+
+  ## 99999999999999 is reserved for temporary errors, 00000000000000 for admin
+    userid_dj = random.randint(1,99999999999998)
+    while True:
+      query = ('select count(id) from skrik.user where id="' + str(userid_dj) + '";')
+      result = runquery(query)  
+      if int(result[0]) == 0:
+        break
+      else:
+        if userid_dj == 99999999999998:
+          userid_dj = 00000000000002
+        else:
+          userid_dj += 1
+  else:
+    userid_dj = result
+      
+  return HttpResponse(userid_dj)
+
+
+@csrf_exempt
+def getnew_userid_old(self):
 ## 99999999999999 is reserved for temporary errors, 00000000000000 for admin
   userid_dj = random.randint(1,99999999999998)
   while True:
@@ -133,24 +165,17 @@ def get_rest_of_users(self, *args, **kwargs):
 def get_news(self, *args, **kwargs):
   userid_dj = kwargs.pop('userid', None)
 
-  query = ('select id, name from skrik.user where id <>"' + userid_dj + '";')
-  result_aux = runquery_multiple(query)
- 
-  dict = {}
-  for result in result_aux:
-    dict[result[0]] = result[1] 
-#  result = list(result_aux)
-  new_dict = {}
-#  new_dict["message_01231231"] = "Hola tu que tal"
-#  new_dict["message_01234231231"] = "que tal"
-#  new_dict["message_0123123231"] = "memememeola tu que tal"
-#  new_dict["message_012341231"] = "Holablablab tu que tal"
-#  new_dict["message_10121231231"] = "Hola tfuuuu que tal"
-#  new_dict["message_201231231"] = "Hola qweqweqwetu que tal"
-#  new_dict["message_301231231"] = "Holashalalala tu que tal"
-  result = json.dumps(dict)
+  query = ('select userid_from,message,status,timestamp,id from skrik.msging where userid_to ="' + userid_dj + '";')
+
+  my_query = runquery_multiple(query) 
+  result = json.dumps(my_query)
 
   return HttpResponse(result)
+
+
+
+
+
 
 @csrf_exempt
 def add_poke(self, *args, **kwargs):
