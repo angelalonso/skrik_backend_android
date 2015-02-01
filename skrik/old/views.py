@@ -9,10 +9,58 @@ import subprocess
 from sql_funcs import *
 
 import random
+import MySQLdb 
 import json
 from collections import defaultdict
 
 import sys
+
+# GENERIC DB-Related functions 
+####
+
+#def runquery(query):
+#  conn = MySQLdb.connect (host = "localhost",
+#  user = "skrik",
+#  passwd = "skrik123",
+#  db = "skrik")
+#  cursor = conn.cursor()
+#
+#  try:
+#    cursor.execute(query)
+#    if cursor.rowcount == 0:
+#      result = ""
+#    else:
+#      result = cursor.fetchone()
+#    conn.commit()
+#  except:
+#    conn.rollback()
+#    return sys.exc_info()
+#
+#  conn.close()
+#  
+#  
+#  return result
+#
+#
+#def runquery_multiple(query):
+#  conn = MySQLdb.connect (host = "localhost",
+#  user = "skrik",
+#  passwd = "skrik123",
+#  db = "skrik")
+#  cursor = conn.cursor()
+#
+#  try:
+#    cursor.execute(query)
+#    result = cursor.fetchall()
+#    conn.commit()
+#  except:
+#    conn.rollback()
+#    return sys.exc_info()
+#
+#  conn.close()
+#  return result
+#
+
 
 
 # urls.py-Related functions
@@ -42,8 +90,6 @@ def getnew_userid(self, *args, **kwargs):
       
   return HttpResponse(userid_dj)
 
-
-
 def getnew_userid_intern(useremail_dj):
   query_existing = ('select id from skrik.user where email="' + str(useremail_dj) + '";')
   result = runquery(query_existing);
@@ -66,7 +112,30 @@ def getnew_userid_intern(useremail_dj):
       
   return userid_dj
 
+#@csrf_exempt
+#def getnew_userid_noemail(self):
+### 99999999999999 is reserved for temporary errors, 00000000000000 for admin
+#  userid_dj = random.randint(1,99999999999998)
+#  while True:
+#    query = ('select count(id) from skrik.user where id="' + str(userid_dj) + '";')
+#    result = runquery(query)  
+#    if int(result[0]) == 0:
+#      break
+#    else:
+#      if userid_dj == 99999999999998:
+#        userid_dj = 00000000000002
+#      else:
+#        userid_dj += 1
+#      
+#  return HttpResponse(userid_dj)
 
+
+#@csrf_exempt
+#def check_user_data(self, *args, **kwargs):
+#  userid = kwargs.pop('userdata', None)
+#
+#  result = "OK"
+#  return HttpResponse(result)
 
 @csrf_exempt
 def get_userid_data(self, *args, **kwargs):
@@ -75,17 +144,6 @@ def get_userid_data(self, *args, **kwargs):
 
   result = runquery(query)
   return HttpResponse(result)
-
-
-
-@csrf_exempt
-def get_userid_username(self, *args, **kwargs):
-  userid = kwargs.pop('userid', None)
-  query = ('select name from skrik.user where id="' + userid + '";')
-
-  result = runquery(query)
-  return HttpResponse(result)
-
 
 
 @csrf_exempt
@@ -120,10 +178,11 @@ def save_userdata(self, *args, **kwargs):
     result = "Email found, NEW ID = " + str(exists_email[0])
   return HttpResponse(result)
 
-
-
 @csrf_exempt
 def save_userdata_old(self, *args, **kwargs):
+#  f = open('/home/aaf/Dev/aapp/server/django_test.txt', 'w')
+#  f.write("Saved user data")
+#  f.close()
   username_dj = kwargs.pop('username', None)
   useremail_dj = kwargs.pop('useremail', None)
   userid_dj = kwargs.pop('userid', None)
@@ -137,7 +196,6 @@ def save_userdata_old(self, *args, **kwargs):
   
   result = runquery(query)
   return HttpResponse(result)
-
 
 
 @csrf_exempt
@@ -160,7 +218,6 @@ def get_rest_of_users(self, *args, **kwargs):
   return HttpResponse(result)
 
 
-
 @csrf_exempt
 def get_news(self, *args, **kwargs):
   userid_dj = kwargs.pop('userid', None)
@@ -171,6 +228,9 @@ def get_news(self, *args, **kwargs):
   result = json.dumps(my_query)
 
   return HttpResponse(result)
+
+
+
 
 
 
@@ -192,8 +252,6 @@ def add_poke(self, *args, **kwargs):
 
   result = runquery(query)
   return HttpResponse(checkresult)
-
-
 
 @csrf_exempt
 def cleanall_pokes(self, *args, **kwargs):
