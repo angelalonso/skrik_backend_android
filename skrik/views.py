@@ -173,6 +173,21 @@ def get_news(self, *args, **kwargs):
   return HttpResponse(result)
 
 
+@csrf_exempt
+def add_message(self, *args, **kwargs):
+  message = kwargs.pop('message', None)
+  userfrom = kwargs.pop('userfrom', None)
+  userto = kwargs.pop('userto', None)
+  timestamp = kwargs.pop('timestamp', None)
+
+  query = ('insert into skrik.msging (userid_from,userid_to,message,status,timestamp) values ("' + userfrom + '","' + userto + '","' + message + '","sent",' + timestamp + ');')
+
+  result = runquery(query)
+
+  return HttpResponse(result)
+
+  
+
 
 @csrf_exempt
 def add_poke(self, *args, **kwargs):

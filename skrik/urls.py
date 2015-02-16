@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^getusers/(?P<userid>\w{1,50})/$', get_rest_of_users),
     url(r'^getusername/(?P<userid>\w{1,50})/$', get_userid_username),
     url(r'^getnews/(?P<userid>\w{1,50})/$', get_news),
+    url(r'^newmessage/(?P<message>[\w|\W]+)/userfrom/(?P<userfrom>.{1,20})/userto/(?P<userto>.{1,20})/timestamp/(?P<timestamp>.{1,14})/$', add_message),
     url(r'^poke/(?P<user_from>\w{1,50})/(?P<user_to>\w{1,50})/$', add_poke),
     url(r'^cleanall/(?P<username>\w{1,50})/$', cleanall_pokes)
 )
