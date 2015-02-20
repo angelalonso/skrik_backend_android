@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 import subprocess
 
 from sql_funcs import *
+from user_funcs import *
 
 import random
 import json
@@ -21,14 +22,14 @@ import sys
 @csrf_exempt
 def getnew_userid(self, *args, **kwargs):
   useremail_dj = kwargs.pop('useremail', None)
-  query_existing = ('select id from skrik.user where email="' + str(useremail_dj) + '";')
+  query_existing = ('select id from skrik.users where email="' + str(useremail_dj) + '";')
   result = runquery(query_existing);
   if result == "":
 
   ## 99999999999999 is reserved for temporary errors, 00000000000000 for admin
     userid_dj = random.randint(1,99999999999998)
     while True:
-      query = ('select count(id) from skrik.user where id="' + str(userid_dj) + '";')
+      query = ('select count(id) from skrik.users where id="' + str(userid_dj) + '";')
       result = runquery(query)  
       if int(result[0]) == 0:
         break
@@ -43,16 +44,16 @@ def getnew_userid(self, *args, **kwargs):
   return HttpResponse(userid_dj)
 
 
-
+# TO BE DELETED
 def getnew_userid_intern(useremail_dj):
-  query_existing = ('select id from skrik.user where email="' + str(useremail_dj) + '";')
+  query_existing = ('select id from skrik.users where email="' + str(useremail_dj) + '";')
   result = runquery(query_existing);
   if result == "":
 
   ## 99999999999999 is reserved for temporary errors, 00000000000000 for admin
     userid_dj = random.randint(1,99999999999998)
     while True:
-      query = ('select count(id) from skrik.user where id="' + str(userid_dj) + '";')
+      query = ('select count(id) from skrik.users where id="' + str(userid_dj) + '";')
       result = runquery(query)  
       if int(result[0]) == 0:
         break
@@ -71,7 +72,7 @@ def getnew_userid_intern(useremail_dj):
 @csrf_exempt
 def get_userid_data(self, *args, **kwargs):
   userid = kwargs.pop('username', None)
-  query = ('select count(id) from skrik.msging where userid_to="' + userid + '";')
+  query = ('select count(id) from skrik.msgs where userid_to="' + userid + '";')
 
   result = runquery(query)
   return HttpResponse(result)
@@ -81,41 +82,41 @@ def get_userid_data(self, *args, **kwargs):
 @csrf_exempt
 def get_userid_username(self, *args, **kwargs):
   userid = kwargs.pop('userid', None)
-  query = ('select name from skrik.user where id="' + userid + '";')
+  query = ('select name from skrik.users where id="' + userid + '";')
 
   result = runquery(query)
   return HttpResponse(result)
 
 
-
+# To be deleted
 @csrf_exempt
 def save_userdata(self, *args, **kwargs):
   username_dj = kwargs.pop('username', None)
   useremail_dj = kwargs.pop('useremail', None)
   userid_dj = kwargs.pop('userid', None)
   regid_dj = kwargs.pop('regid', None)
-  query_email = ('select id from skrik.user where email="' + useremail_dj + '";')
+  query_email = ('select id from skrik.users where email="' + useremail_dj + '";')
   exists_email = runquery(query_email)
    
   if exists_email == "":
     if userid_dj == "99999999999999":
       newuserid = getnew_userid_intern(useremail_dj)
-      query = """INSERT INTO skrik.user (name, email, id, reg_id) VALUES ('%s','%s','%s','%s')""" % (username_dj,useremail_dj,newuserid,regid_dj)
+      query = """INSERT INTO skrik.users (name, email, id, reg_id) VALUES ('%s','%s','%s','%s')""" % (username_dj,useremail_dj,newuserid,regid_dj)
       query_res = runquery(query)
       result = "NEW ID = " + str(newuserid)
     else:
-      query_id = ('select count(id) from skrik.user where id="' + userid_dj + '";')
+      query_id = ('select count(id) from skrik.users where id="' + userid_dj + '";')
       exists_id = runquery(query_id)
       result = exists_id[0]
       if exists_id[0] > 0:
-        query = ('UPDATE skrik.user SET name="' + username_dj + '", email="' + useremail_dj + '", reg_id="' + regid_dj + '" WHERE id="' + userid_dj +'";')
+        query = ('UPDATE skrik.users SET name="' + username_dj + '", email="' + useremail_dj + '", reg_id="' + regid_dj + '" WHERE id="' + userid_dj +'";')
         query_res = runquery(query)
         result = "ID found, rest updated"
       else:
-        query = """INSERT INTO skrik.user (name, email, id, reg_id) VALUES ('%s','%s','%s','%s')""" % (username_dj,useremail_dj,userid_dj,regid_dj)
+        query = """INSERT INTO skrik.users (name, email, id, reg_id) VALUES ('%s','%s','%s','%s')""" % (username_dj,useremail_dj,userid_dj,regid_dj)
         result = runquery(query)
   else:
-    query = ('UPDATE skrik.user SET name="' + username_dj + '", reg_id="' + regid_dj + '" WHERE email="' + useremail_dj +'";')
+    query = ('UPDATE skrik.users SET name="' + username_dj + '", reg_id="' + regid_dj + '" WHERE email="' + useremail_dj +'";')
     query_res = runquery(query)
     result = "Email found, NEW ID = " + str(exists_email[0])
   return HttpResponse(result)
@@ -128,12 +129,12 @@ def save_userdata_old(self, *args, **kwargs):
   useremail_dj = kwargs.pop('useremail', None)
   userid_dj = kwargs.pop('userid', None)
   regid_dj = kwargs.pop('regid', None)
-  query_id = ('select count(id) from skrik.user where id="' + userid_dj + '";')
+  query_id = ('select count(id) from skrik.users where id="' + userid_dj + '";')
   exists_id = runquery(query_id)
   if exists_id[0] > 0:
-    query = ('UPDATE skrik.user SET name="' + username_dj + '", email="' + useremail_dj + '", reg_id="' + regid_dj + '" WHERE id="' + userid_dj +'";')
+    query = ('UPDATE skrik.users SET name="' + username_dj + '", email="' + useremail_dj + '", reg_id="' + regid_dj + '" WHERE id="' + userid_dj +'";')
   else:
-    query = """INSERT INTO skrik.user (name, email, id, reg_id) VALUES ('%s','%s','%s','%s')""" % (username_dj,useremail_dj,userid_dj,regid_dj)
+    query = """INSERT INTO skrik.users (name, email, id, reg_id) VALUES ('%s','%s','%s','%s')""" % (username_dj,useremail_dj,userid_dj,regid_dj)
   
   result = runquery(query)
   return HttpResponse(result)
@@ -143,7 +144,7 @@ def save_userdata_old(self, *args, **kwargs):
 @csrf_exempt
 def get_rest_of_users(self, *args, **kwargs):
   userid_dj = kwargs.pop('userid', None)
-  query = ('select id, name from skrik.user where id <>"' + userid_dj + '";')
+  query = ('select id, name from skrik.users where id <>"' + userid_dj + '";')
   result_aux = runquery_multiple(query)
   ctr_i = 0
   arr = []
@@ -165,7 +166,7 @@ def get_rest_of_users(self, *args, **kwargs):
 def get_news(self, *args, **kwargs):
   userid_dj = kwargs.pop('userid', None)
 
-  query = ('select userid_from,message,status,timestamp,id from skrik.msging where userid_to ="' + userid_dj + '";')
+  query = ('select userid_from,message,status,timestamp,id from skrik.msgs where userid_to ="' + userid_dj + '";')
 
   my_query = runquery_multiple(query) 
   result = json.dumps(my_query)
@@ -180,7 +181,7 @@ def add_message(self, *args, **kwargs):
   userto = kwargs.pop('userto', None)
   timestamp = kwargs.pop('timestamp', None)
 
-  query = ('insert into skrik.msging (userid_from,userid_to,message,status,timestamp) values ("' + userfrom + '","' + userto + '","' + message + '","sent",' + timestamp + ');')
+  query = ('insert into skrik.msgs (userid_from,userid_to,message,status,timestamp) values ("' + userfrom + '","' + userto + '","' + message + '","sent",' + timestamp + ');')
 
   result = runquery(query)
 
@@ -194,7 +195,7 @@ def add_poke(self, *args, **kwargs):
   userid_from = kwargs.pop('user_from', None)
   userid_to = kwargs.pop('user_to', None)
 
-  regid_query = ('select reg_id from skrik.user where id ="' + userid_to + '";')
+  regid_query = ('select reg_id from skrik.users where id ="' + userid_to + '";')
   regid_to = runquery(regid_query)
 
   p = subprocess.Popen("/home/pi/skrik/server/skrik/scripts/push.sh '" + ''.join(regid_to) + "' 'You have new pokes!'", shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -203,7 +204,7 @@ def add_poke(self, *args, **kwargs):
     checkresult += ''.join(line),
   retval = p.wait()
   
-  query = """INSERT INTO skrik.msging (userid_from, userid_to, status) VALUES ('%s','%s','%s')""" % (userid_from,userid_to,"sent") 
+  query = """INSERT INTO skrik.msgs (userid_from, userid_to, status) VALUES ('%s','%s','%s')""" % (userid_from,userid_to,"sent") 
 
   result = runquery(query)
   return HttpResponse(checkresult)
@@ -213,7 +214,7 @@ def add_poke(self, *args, **kwargs):
 @csrf_exempt
 def cleanall_pokes(self, *args, **kwargs):
   userid = kwargs.pop('username', None)
-  query = ('DELETE FROM skrik.msging WHERE userid_to="' + userid + '";')
+  query = ('DELETE FROM skrik.msgs WHERE userid_to="' + userid + '";')
 
   result = runquery(query)
   return HttpResponse(result)

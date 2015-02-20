@@ -1,10 +1,22 @@
-CREATE TABLE msging ( id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE users ( id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+          name VARCHAR(50),
+          email VARCHAR(100),
+	  phone VARCHAR(20),
+          reg_id VARCHAR(200),
+          pass VARCHAR(100),
+          status VARCHAR(250)
+        );
+
+
+CREATE TABLE msgs ( id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
           userid_from BIGINT NOT NULL,
           userid_to BIGINT NOT NULL,
           message VARCHAR(250),
           status VARCHAR(4) NOT NULL,
           timestamp INT(14)
         );
+
+
 
 
 http://www.epochconverter.com/programming/mysql-from-unixtime.php
