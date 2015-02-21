@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from sql_funcs import *
 
 import random
+import json
 
 @csrf_exempt
 def save_user(self, *args, **kwargs):
@@ -114,4 +115,15 @@ def getnew_userid_intern(useraccount_dj):
     userid_dj = "ERROR"
 
   return userid_dj
+
+@csrf_exempt
+def search_users(self, *args, **kwargs):
+  word2search_dj = kwargs.pop('word2search', None)
+
+  query = (' select name from skrik.users where name like "%' + word2search_dj + '%" or email like "%' + word2search_dj + '%" or phone like "%' + word2search_dj + '%";')
+
+  my_query = runquery_multiple(query)
+  result = json.dumps(my_query)
+
+  return HttpResponse(result)
 
