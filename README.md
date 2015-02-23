@@ -1,10 +1,10 @@
 CREATE TABLE users ( id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-          name VARCHAR(50),
-          email VARCHAR(100),
-	  phone VARCHAR(20),
+          name VARCHAR(50) NOT NULL,
+          email VARCHAR(100) NOT NULL,
+	  phone VARCHAR(20) NOT NULL,
           reg_id VARCHAR(200),
           pass VARCHAR(100),
-          status VARCHAR(250)
+          status VARCHAR(250) NOT NULL
         );
 
 

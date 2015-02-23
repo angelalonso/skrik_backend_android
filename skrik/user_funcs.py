@@ -116,11 +116,13 @@ def getnew_userid_intern(useraccount_dj):
 
   return userid_dj
 
+
+
 @csrf_exempt
 def search_users(self, *args, **kwargs):
   word2search_dj = kwargs.pop('word2search', None)
 
-  query = (' select name from skrik.users where name like "%' + word2search_dj + '%" or email like "%' + word2search_dj + '%" or phone like "%' + word2search_dj + '%";')
+  query = (' select name,id,status,(length(name)-length(replace(name,"' + word2search_dj + '",""))) + (length(email)-length(replace(email,"' + word2search_dj + '",""))) + length(phone)-length(replace(phone,"' + word2search_dj + '","")) as count from skrik.users where name like "%' + word2search_dj + '%" or email like "%' + word2search_dj + '%" or phone like "%' + word2search_dj + '%" order by count desc;')
 
   my_query = runquery_multiple(query)
   result = json.dumps(my_query)
