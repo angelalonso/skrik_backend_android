@@ -20,7 +20,7 @@ def save_user(self, *args, **kwargs):
     if exists_email == "":
       if userid_dj == "99999999999999":
         newuserid = getnew_userid_intern(useraccount_dj)
-        query = """INSERT INTO skrik.users (name, email, phone, id, reg_id) VALUES ('%s','%s','%s','%s','%s')""" % (username_dj,useremail_dj,'',newuserid,regid_dj)
+        query = """INSERT INTO skrik.users (name, email, phone, id, reg_id, status) VALUES ('%s','%s','%s','%s','%s','%s')""" % (username_dj,useremail_dj,'',newuserid,regid_dj,'active')
         query_res = runquery(query)
         result = "NEW ID = " + str(newuserid)
       else:
@@ -32,7 +32,7 @@ def save_user(self, *args, **kwargs):
           query_res = runquery(query)
           result = "ID found, rest updated"
         else:
-          query = """INSERT INTO skrik.users (name, email, phone, id, reg_id) VALUES ('%s','%s','%s','%s','%s')""" % (username_dj,useremail_dj,'',userid_dj,regid_dj)
+          query = """INSERT INTO skrik.users (name, email, phone, id, reg_id, status) VALUES ('%s','%s','%s','%s','%s','%s')""" % (username_dj,useremail_dj,'',userid_dj,regid_dj,'active')
           result = runquery(query)
     else:
       query = ('UPDATE skrik.users SET name="' + username_dj + '", reg_id="' + regid_dj + '" WHERE email="' + useremail_dj +'";')
@@ -46,7 +46,7 @@ def save_user(self, *args, **kwargs):
     if exists_phone == "":
       if userid_dj == "99999999999999":
         newuserid = getnew_userid_intern(useraccount_dj)
-        query = """INSERT INTO skrik.users (name, email, phone, id, reg_id) VALUES ('%s','%s','%s','%s','%s')""" % (username_dj,'',userphone_dj,newuserid,regid_dj)
+        query = """INSERT INTO skrik.users (name, email, phone, id, reg_id, status) VALUES ('%s','%s','%s','%s','%s','%s')""" % (username_dj,'',userphone_dj,newuserid,regid_dj,'active')
         query_res = runquery(query)
         result = "NEW ID = " + str(newuserid)
       else:
@@ -58,7 +58,7 @@ def save_user(self, *args, **kwargs):
           query_res = runquery(query)
           result = "ID found, rest updated"
         else:
-          query = """INSERT INTO skrik.users (name, email, phone, id, reg_id) VALUES ('%s','%s','%s','%s','%s')""" % (username_dj,'',userphone_dj,userid_dj,regid_dj)
+          query = """INSERT INTO skrik.users (name, email, phone, id, reg_id, status) VALUES ('%s','%s','%s','%s','%s','%s')""" % (username_dj,'',userphone_dj,userid_dj,regid_dj,'active')
           result = runquery(query)
     else:
       query = ('UPDATE skrik.users SET name="' + username_dj + '", reg_id="' + regid_dj + '" WHERE phone="' + userphone_dj +'";')
@@ -72,14 +72,14 @@ def save_user(self, *args, **kwargs):
 def getnew_userid_intern(useraccount_dj):
   if useraccount_dj[0] == "e": 
     useremail_dj = useraccount_dj[0]
-    query_existing = ('select id from skrik.users where email="' + str(useremail_dj) + '";')
+    query_existing = ('SELECT id FROM skrik.users WHERE email="' + str(useremail_dj) + '";')
     result = runquery(query_existing);
     if result == "":
 
     ## 99999999999999 is reserved for temporary errors, 00000000000000 for admin
       userid_dj = random.randint(1,99999999999998)
       while True:
-        query = ('select count(id) from skrik.users where id="' + str(userid_dj) + '";')
+        query = ('SELECT count(id) FROM skrik.users WHERE id="' + str(userid_dj) + '";')
         result = runquery(query)
         if int(result[0]) == 0:
           break
@@ -92,14 +92,14 @@ def getnew_userid_intern(useraccount_dj):
       userid_dj = result
   elif useraccount_dj[0] == "p":
     userphone_dj = useraccount_dj[1:]
-    query_existing = ('select id from skrik.users where phone="' + str(userphone_dj) + '";')
+    query_existing = ('SELECT id FROM skrik.users WHERE phone="' + str(userphone_dj) + '";')
     result = runquery(query_existing);
     if result == "":
 
     ## 99999999999999 is reserved for temporary errors, 00000000000000 for admin
       userid_dj = random.randint(1,99999999999998)
       while True:
-        query = ('select count(id) from skrik.users where id="' + str(userid_dj) + '";')
+        query = ('SELECT count(id) FROM skrik.users WHERE id="' + str(userid_dj) + '";')
         result = runquery(query)
         if int(result[0]) == 0:
           break
