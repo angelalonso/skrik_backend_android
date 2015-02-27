@@ -8,6 +8,7 @@ import subprocess
 
 from sql_funcs import *
 from user_funcs import *
+from msg_funcs import *
 
 import random
 import json
@@ -88,7 +89,7 @@ def get_userid_username(self, *args, **kwargs):
   return HttpResponse(result)
 
 
-# To be deleted
+# TO BE DELETED
 @csrf_exempt
 def save_userdata(self, *args, **kwargs):
   username_dj = kwargs.pop('username', None)
@@ -174,8 +175,9 @@ def get_news(self, *args, **kwargs):
   return HttpResponse(result)
 
 
+# TO BE DELETED
 @csrf_exempt
-def add_message(self, *args, **kwargs):
+def add_message_old(self, *args, **kwargs):
   message = kwargs.pop('message', None)
   userfrom = kwargs.pop('userfrom', None)
   userto = kwargs.pop('userto', None)
