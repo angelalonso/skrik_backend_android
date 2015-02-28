@@ -162,9 +162,9 @@ def get_rest_of_users(self, *args, **kwargs):
   return HttpResponse(result)
 
 
-
+# TO BE DELETED
 @csrf_exempt
-def get_news(self, *args, **kwargs):
+def get_news_old(self, *args, **kwargs):
   userid_dj = kwargs.pop('userid', None)
 
   query = ('select userid_from,message,status,timestamp,id from skrik.msgs where userid_to ="' + userid_dj + '";')
