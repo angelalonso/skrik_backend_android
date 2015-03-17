@@ -3,6 +3,8 @@ from django.http import HttpResponse
 
 from sql_funcs import *
 
+from gcm import *
+
 import random
 import json
 
@@ -21,6 +23,16 @@ def add_message(self, *args, **kwargs):
   result_id = runquery(query_id)
   
   result = "received " + str(result_id[0])
+
+  query_notify = ('SELECT reg_id FROM skrik.users WHERE id="' + userto + '";')
+  reg_id = runquery(query_notify)
+
+  gcm = GCM("AIzaSyANSOhkcfA05dT63SoWD1cieLbRGspO9ns")
+  data = {'the_message': 'You have x new friends', 'param2': 'value2'}
+
+  if (str(reg_id[0]) !='4444') and (str(reg_id[0]) !=''):
+    gcm.plaintext_request(registration_id=reg_id[0], data=data)
+
 
   return HttpResponse(result)
 
@@ -47,10 +59,10 @@ def get_news(self, *args, **kwargs):
 def news_confirmed(self, *args, **kwargs):
   msgkey_dj = kwargs.pop('key', None)
 
-  query_update = ('UPDATE skrik.msgs SET status="forwarded" WHERE status = "fwding-' + msgkey_dj + '";')
+  #query_update = ('UPDATE skrik.msgs SET status="forwarded" WHERE status = "fwding-' + msgkey_dj + '";')
+  query_delete = ('DELETE FROM skrik.msgs WHERE status = "fwding-' + msgkey_dj + '";')
 
-
-  result_update = runquery_multiple(query_update)
+  result_update = runquery_multiple(query_delete)
 
   return HttpResponse(result_update)
 

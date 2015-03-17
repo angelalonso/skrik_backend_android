@@ -12,7 +12,7 @@ CREATE TABLE msgs ( id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
           userid_from BIGINT NOT NULL,
           userid_to BIGINT NOT NULL,
           message VARCHAR(250),
-          status VARCHAR(4) NOT NULL,
+          status VARCHAR(14) NOT NULL,
           timestamp INT(14)
         );
 
