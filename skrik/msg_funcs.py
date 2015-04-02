@@ -28,7 +28,7 @@ def add_message(self, *args, **kwargs):
   reg_id = runquery(query_notify)
 
   gcm = GCM("AIzaSyANSOhkcfA05dT63SoWD1cieLbRGspO9ns")
-  data = {'the_message': 'You have x new friends', 'param2': 'value2'}
+  data = {'message': message, 'userfrom': userfrom}
 
   if (str(reg_id[0]) !='4444') and (str(reg_id[0]) !=''):
     gcm.plaintext_request(registration_id=reg_id[0], data=data)
