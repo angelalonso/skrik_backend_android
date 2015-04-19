@@ -16,8 +16,7 @@ PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
 #MEDIA_ROOT = PROJECT_PATH + '/media/'
 
-TEMPLATE_DIRS = (
-    PROJECT_PATH + '/templates/',
+TEMPLATE_DIRS = ( '/home/sysadm/app-live/skrik_backend_android/templates/',
 )
 
 # Quick-start development settings - unsuitable for production
@@ -27,10 +26,9 @@ TEMPLATE_DIRS = (
 SECRET_KEY = 'je_=%1k2bh+g&v^q%(kzri$19q%yiwfp#w$g+@31)vyac#q8go'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
-
+TEMPLATE_DEBUG = False
 ALLOWED_HOSTS = []
 
 

@@ -147,3 +147,45 @@
 [Sun Apr 19 12:12:16.823064 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/translation/trans_real.py", line 164, in _add_installed_apps_translations
 [Sun Apr 19 12:12:16.823080 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     "The translation infrastructure cannot be initialized before the "
 [Sun Apr 19 12:12:16.823100 2015] [:error] [pid 20424] [client 95.91.247.96:23047] AppRegistryNotReady: The translation infrastructure cannot be initialized before the apps registry is ready. Check that you don't make non-lazy gettext calls at import time.
+[Mon Apr 20 00:04:34.355674 2015] [:error] [pid 23274] [client 95.91.247.96:23037] mod_wsgi (pid=23274): Target WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi' cannot be loaded as Python module.
+[Mon Apr 20 00:04:34.355712 2015] [:error] [pid 23274] [client 95.91.247.96:23037] mod_wsgi (pid=23274): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Mon Apr 20 00:04:34.355739 2015] [:error] [pid 23274] [client 95.91.247.96:23037] Traceback (most recent call last):
+[Mon Apr 20 00:04:34.355758 2015] [:error] [pid 23274] [client 95.91.247.96:23037]   File "/var/www/skrik_backend_android/apache.conf/web.wsgi", line 6, in <module>
+[Mon Apr 20 00:04:34.355826 2015] [:error] [pid 23274] [client 95.91.247.96:23037]     application = get_wsgi_application()
+[Mon Apr 20 00:04:34.355839 2015] [:error] [pid 23274] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/core/wsgi.py", line 14, in get_wsgi_application
+[Mon Apr 20 00:04:34.355882 2015] [:error] [pid 23274] [client 95.91.247.96:23037]     django.setup()
+[Mon Apr 20 00:04:34.355896 2015] [:error] [pid 23274] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/__init__.py", line 17, in setup
+[Mon Apr 20 00:04:34.355949 2015] [:error] [pid 23274] [client 95.91.247.96:23037]     configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+[Mon Apr 20 00:04:34.355964 2015] [:error] [pid 23274] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 48, in __getattr__
+[Mon Apr 20 00:04:34.356054 2015] [:error] [pid 23274] [client 95.91.247.96:23037]     self._setup(name)
+[Mon Apr 20 00:04:34.356068 2015] [:error] [pid 23274] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 44, in _setup
+[Mon Apr 20 00:04:34.356087 2015] [:error] [pid 23274] [client 95.91.247.96:23037]     self._wrapped = Settings(settings_module)
+[Mon Apr 20 00:04:34.356096 2015] [:error] [pid 23274] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 92, in __init__
+[Mon Apr 20 00:04:34.356114 2015] [:error] [pid 23274] [client 95.91.247.96:23037]     mod = importlib.import_module(self.SETTINGS_MODULE)
+[Mon Apr 20 00:04:34.356125 2015] [:error] [pid 23274] [client 95.91.247.96:23037]   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+[Mon Apr 20 00:04:34.356171 2015] [:error] [pid 23274] [client 95.91.247.96:23037]     __import__(name)
+[Mon Apr 20 00:04:34.356222 2015] [:error] [pid 23274] [client 95.91.247.96:23037]   File "/var/www/skrik_backend_android/skrik/settings.py", line 20
+[Mon Apr 20 00:04:34.356231 2015] [:error] [pid 23274] [client 95.91.247.96:23037]     Include "/home/sysadm/app-live/skrik_backend_android/apache.conf/wsgi.conf"
+[Mon Apr 20 00:04:34.356236 2015] [:error] [pid 23274] [client 95.91.247.96:23037]                                                                               ^
+[Mon Apr 20 00:04:34.356242 2015] [:error] [pid 23274] [client 95.91.247.96:23037] SyntaxError: invalid syntax
+[Mon Apr 20 00:04:36.549896 2015] [:error] [pid 23273] [client 95.91.247.96:6989] mod_wsgi (pid=23273): Target WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi' cannot be loaded as Python module.
+[Mon Apr 20 00:04:36.549931 2015] [:error] [pid 23273] [client 95.91.247.96:6989] mod_wsgi (pid=23273): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Mon Apr 20 00:04:36.549958 2015] [:error] [pid 23273] [client 95.91.247.96:6989] Traceback (most recent call last):
+[Mon Apr 20 00:04:36.549976 2015] [:error] [pid 23273] [client 95.91.247.96:6989]   File "/var/www/skrik_backend_android/apache.conf/web.wsgi", line 6, in <module>
+[Mon Apr 20 00:04:36.551768 2015] [:error] [pid 23273] [client 95.91.247.96:6989]     application = get_wsgi_application()
+[Mon Apr 20 00:04:36.551793 2015] [:error] [pid 23273] [client 95.91.247.96:6989]   File "/usr/local/lib/python2.7/dist-packages/django/core/wsgi.py", line 14, in get_wsgi_application
+[Mon Apr 20 00:04:36.551856 2015] [:error] [pid 23273] [client 95.91.247.96:6989]     django.setup()
+[Mon Apr 20 00:04:36.551871 2015] [:error] [pid 23273] [client 95.91.247.96:6989]   File "/usr/local/lib/python2.7/dist-packages/django/__init__.py", line 17, in setup
+[Mon Apr 20 00:04:36.551915 2015] [:error] [pid 23273] [client 95.91.247.96:6989]     configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+[Mon Apr 20 00:04:36.551928 2015] [:error] [pid 23273] [client 95.91.247.96:6989]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 48, in __getattr__
+[Mon Apr 20 00:04:36.552000 2015] [:error] [pid 23273] [client 95.91.247.96:6989]     self._setup(name)
+[Mon Apr 20 00:04:36.552012 2015] [:error] [pid 23273] [client 95.91.247.96:6989]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 44, in _setup
+[Mon Apr 20 00:04:36.552031 2015] [:error] [pid 23273] [client 95.91.247.96:6989]     self._wrapped = Settings(settings_module)
+[Mon Apr 20 00:04:36.552040 2015] [:error] [pid 23273] [client 95.91.247.96:6989]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 92, in __init__
+[Mon Apr 20 00:04:36.552079 2015] [:error] [pid 23273] [client 95.91.247.96:6989]     mod = importlib.import_module(self.SETTINGS_MODULE)
+[Mon Apr 20 00:04:36.552090 2015] [:error] [pid 23273] [client 95.91.247.96:6989]   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+[Mon Apr 20 00:04:36.552140 2015] [:error] [pid 23273] [client 95.91.247.96:6989]     __import__(name)
+[Mon Apr 20 00:04:36.552195 2015] [:error] [pid 23273] [client 95.91.247.96:6989]   File "/var/www/skrik_backend_android/skrik/settings.py", line 20
+[Mon Apr 20 00:04:36.552203 2015] [:error] [pid 23273] [client 95.91.247.96:6989]     Include "/home/sysadm/app-live/skrik_backend_android/apache.conf/wsgi.conf"
+[Mon Apr 20 00:04:36.552209 2015] [:error] [pid 23273] [client 95.91.247.96:6989]                                                                               ^
+[Mon Apr 20 00:04:36.552214 2015] [:error] [pid 23273] [client 95.91.247.96:6989] SyntaxError: invalid syntax
