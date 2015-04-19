@@ -1,0 +1,4 @@
+skrik/settings.py
+skrik/*.pyc
+*.swp
+*.log
