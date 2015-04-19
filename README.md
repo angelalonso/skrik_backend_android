@@ -1,3 +1,30 @@
+What you will need to make this Backend work:
+
+- Install some required packages 
+# apt-get install libapache2-mod-wsgi libapache2-mod-python python-setuptools python-pip libmysqlclient-dev python-dev
+
+- Use PIP to add some spices to python (Django amongst them)
+# pip install Django MySQL-python python-gcm
+
+#cp skrik.conf /etc/apache2/sites-available/skrik.conf
+#ln -s /etc/apache2/sites-available/skrik.conf /etc/apache2/sites-enabled/skrik.conf
+
+You might then want to modify that file to your needs. If this is the only web you'll be serving, you might as well want to do the following cleanup:
+# rm /etc/apache2/sites-enabled/000-default.conf
+
+- Load the Database structure and user privileges
+#myql -u root -p < skrik.sql
+
+cp apache2.conf apache2.conf.orig
+
+
+
+NO -> https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi
+http://stackoverflow.com/questions/18012456/deploying-django-with-apache
+
+
+
+
 TWO TABLES NEEDED:
 
 CREATE TABLE users ( id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -23,7 +50,7 @@ CREATE TABLE msgs ( id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 
 http://www.epochconverter.com/programming/mysql-from-unixtime.php
 
-select count(*), userid_from, FROM_UNIXTIME(MAX(timestamp)) from msging where userid_to=16101848762844 group by userid_from;
+select count( * ), userid_from, FROM_UNIXTIME(MAX(timestamp)) from msging where userid_to=16101848762844 group by userid_from;
 
 
 Get current epoch time	SELECT UNIX_TIMESTAMP(NOW()) (now() is optional)
@@ -35,4 +62,4 @@ Convert from epoch to date 	SELECT FROM_UNIXTIME(epoch timestamp, optional outpu
 The default output is YYY-MM-DD HH:MM:SS
 FROM_UNIXTIME doesn't work with negative timestamps
 
-
+If anything fails drop me an e-Mail to angelalonso@fonseca.de.com

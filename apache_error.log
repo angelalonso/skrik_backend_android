@@ -1,0 +1,149 @@
+[Sun Apr 19 13:18:41.372552 2015] [authz_core:error] [pid 10797] [client 95.91.247.96:23072] AH01630: client denied by server configuration: /home/sysadm/app-live/skrik_backend_android/
+[Sun Apr 19 13:18:42.168442 2015] [authz_core:error] [pid 10797] [client 95.91.247.96:23072] AH01630: client denied by server configuration: /home/sysadm/app-live/skrik_backend_android/
+[Sun Apr 19 13:26:34.972459 2015] [authz_core:error] [pid 10896] [client 95.91.247.96:23034] AH01630: client denied by server configuration: /home/sysadm/app-live/skrik_backend_android/
+[Sun Apr 19 13:26:35.743437 2015] [authz_core:error] [pid 10896] [client 95.91.247.96:23034] AH01630: client denied by server configuration: /home/sysadm/app-live/skrik_backend_android/
+[Sun Apr 19 13:27:14.846856 2015] [authz_core:error] [pid 10895] [client 95.91.247.96:23065] AH01630: client denied by server configuration: /home/sysadm/app-live/skrik_backend_android/
+[Sun Apr 19 13:59:24.833260 2015] [:error] [pid 11405] [client 95.91.247.96:23066] mod_wsgi (pid=11405): Target WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi' cannot be loaded as Python module.
+[Sun Apr 19 13:59:24.833300 2015] [:error] [pid 11405] [client 95.91.247.96:23066] mod_wsgi (pid=11405): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Sun Apr 19 13:59:24.833328 2015] [:error] [pid 11405] [client 95.91.247.96:23066] Traceback (most recent call last):
+[Sun Apr 19 13:59:24.833344 2015] [:error] [pid 11405] [client 95.91.247.96:23066]   File "/var/www/skrik_backend_android/apache.conf/web.wsgi", line 5, in <module>
+[Sun Apr 19 13:59:24.833418 2015] [:error] [pid 11405] [client 95.91.247.96:23066]     import django.core.handlers.wsgi
+[Sun Apr 19 13:59:24.833459 2015] [:error] [pid 11405] [client 95.91.247.96:23066] ImportError: No module named django.core.handlers.wsgi
+[Sun Apr 19 13:59:30.460306 2015] [:error] [pid 11403] [client 95.91.247.96:23029] mod_wsgi (pid=11403): Target WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi' cannot be loaded as Python module.
+[Sun Apr 19 13:59:30.460360 2015] [:error] [pid 11403] [client 95.91.247.96:23029] mod_wsgi (pid=11403): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Sun Apr 19 13:59:30.460375 2015] [:error] [pid 11403] [client 95.91.247.96:23029] Traceback (most recent call last):
+[Sun Apr 19 13:59:30.460403 2015] [:error] [pid 11403] [client 95.91.247.96:23029]   File "/var/www/skrik_backend_android/apache.conf/web.wsgi", line 5, in <module>
+[Sun Apr 19 13:59:30.460462 2015] [:error] [pid 11403] [client 95.91.247.96:23029]     import django.core.handlers.wsgi
+[Sun Apr 19 13:59:30.460480 2015] [:error] [pid 11403] [client 95.91.247.96:23029] ImportError: No module named django.core.handlers.wsgi
+[Sun Apr 19 14:00:03.258535 2015] [:error] [pid 11406] [client 66.249.73.177:61002] mod_wsgi (pid=11406): Target WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi' cannot be loaded as Python module.
+[Sun Apr 19 14:00:03.258571 2015] [:error] [pid 11406] [client 66.249.73.177:61002] mod_wsgi (pid=11406): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Sun Apr 19 14:00:03.258587 2015] [:error] [pid 11406] [client 66.249.73.177:61002] Traceback (most recent call last):
+[Sun Apr 19 14:00:03.258603 2015] [:error] [pid 11406] [client 66.249.73.177:61002]   File "/var/www/skrik_backend_android/apache.conf/web.wsgi", line 5, in <module>
+[Sun Apr 19 14:00:03.258668 2015] [:error] [pid 11406] [client 66.249.73.177:61002]     import django.core.handlers.wsgi
+[Sun Apr 19 14:00:03.258687 2015] [:error] [pid 11406] [client 66.249.73.177:61002] ImportError: No module named django.core.handlers.wsgi
+[Sun Apr 19 14:00:12.723986 2015] [:error] [pid 11471] [client 95.91.247.96:23056] mod_wsgi (pid=11471): Target WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi' cannot be loaded as Python module.
+[Sun Apr 19 14:00:12.724145 2015] [:error] [pid 11471] [client 95.91.247.96:23056] mod_wsgi (pid=11471): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Sun Apr 19 14:00:12.724170 2015] [:error] [pid 11471] [client 95.91.247.96:23056] Traceback (most recent call last):
+[Sun Apr 19 14:00:12.724189 2015] [:error] [pid 11471] [client 95.91.247.96:23056]   File "/var/www/skrik_backend_android/apache.conf/web.wsgi", line 5, in <module>
+[Sun Apr 19 14:00:12.724251 2015] [:error] [pid 11471] [client 95.91.247.96:23056]     import django.core.handlers.wsgi
+[Sun Apr 19 14:00:12.724270 2015] [:error] [pid 11471] [client 95.91.247.96:23056] ImportError: No module named django.core.handlers.wsgi
+[Sun Apr 19 14:00:13.633421 2015] [:error] [pid 11470] [client 95.91.247.96:23040] mod_wsgi (pid=11470): Target WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi' cannot be loaded as Python module.
+[Sun Apr 19 14:00:13.633475 2015] [:error] [pid 11470] [client 95.91.247.96:23040] mod_wsgi (pid=11470): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Sun Apr 19 14:00:13.633491 2015] [:error] [pid 11470] [client 95.91.247.96:23040] Traceback (most recent call last):
+[Sun Apr 19 14:00:13.633511 2015] [:error] [pid 11470] [client 95.91.247.96:23040]   File "/var/www/skrik_backend_android/apache.conf/web.wsgi", line 5, in <module>
+[Sun Apr 19 14:00:13.633573 2015] [:error] [pid 11470] [client 95.91.247.96:23040]     import django.core.handlers.wsgi
+[Sun Apr 19 14:00:13.633592 2015] [:error] [pid 11470] [client 95.91.247.96:23040] ImportError: No module named django.core.handlers.wsgi
+[Sun Apr 19 14:05:47.668816 2015] [:error] [pid 16897] [client 95.91.247.96:23066] mod_wsgi (pid=16897): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Sun Apr 19 14:05:47.671709 2015] [:error] [pid 16897] [client 95.91.247.96:23066] Traceback (most recent call last):
+[Sun Apr 19 14:05:47.671739 2015] [:error] [pid 16897] [client 95.91.247.96:23066]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 170, in __call__
+[Sun Apr 19 14:05:47.671874 2015] [:error] [pid 16897] [client 95.91.247.96:23066]     self.load_middleware()
+[Sun Apr 19 14:05:47.671888 2015] [:error] [pid 16897] [client 95.91.247.96:23066]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 49, in load_middleware
+[Sun Apr 19 14:05:47.671979 2015] [:error] [pid 16897] [client 95.91.247.96:23066]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Sun Apr 19 14:05:47.672006 2015] [:error] [pid 16897] [client 95.91.247.96:23066]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 48, in __getattr__
+[Sun Apr 19 14:05:47.672099 2015] [:error] [pid 16897] [client 95.91.247.96:23066]     self._setup(name)
+[Sun Apr 19 14:05:47.672111 2015] [:error] [pid 16897] [client 95.91.247.96:23066]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 44, in _setup
+[Sun Apr 19 14:05:47.672130 2015] [:error] [pid 16897] [client 95.91.247.96:23066]     self._wrapped = Settings(settings_module)
+[Sun Apr 19 14:05:47.672140 2015] [:error] [pid 16897] [client 95.91.247.96:23066]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 92, in __init__
+[Sun Apr 19 14:05:47.672156 2015] [:error] [pid 16897] [client 95.91.247.96:23066]     mod = importlib.import_module(self.SETTINGS_MODULE)
+[Sun Apr 19 14:05:47.672165 2015] [:error] [pid 16897] [client 95.91.247.96:23066]   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+[Sun Apr 19 14:05:47.672210 2015] [:error] [pid 16897] [client 95.91.247.96:23066]     __import__(name)
+[Sun Apr 19 14:05:47.672253 2015] [:error] [pid 16897] [client 95.91.247.96:23066] ImportError: No module named myapp.settings
+[Sun Apr 19 14:05:55.453936 2015] [:error] [pid 16898] [client 95.91.247.96:23037] mod_wsgi (pid=16898): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Sun Apr 19 14:05:55.453990 2015] [:error] [pid 16898] [client 95.91.247.96:23037] Traceback (most recent call last):
+[Sun Apr 19 14:05:55.454027 2015] [:error] [pid 16898] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 170, in __call__
+[Sun Apr 19 14:05:55.454153 2015] [:error] [pid 16898] [client 95.91.247.96:23037]     self.load_middleware()
+[Sun Apr 19 14:05:55.454167 2015] [:error] [pid 16898] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 49, in load_middleware
+[Sun Apr 19 14:05:55.454257 2015] [:error] [pid 16898] [client 95.91.247.96:23037]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Sun Apr 19 14:05:55.454274 2015] [:error] [pid 16898] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 48, in __getattr__
+[Sun Apr 19 14:05:55.454348 2015] [:error] [pid 16898] [client 95.91.247.96:23037]     self._setup(name)
+[Sun Apr 19 14:05:55.454361 2015] [:error] [pid 16898] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 44, in _setup
+[Sun Apr 19 14:05:55.454379 2015] [:error] [pid 16898] [client 95.91.247.96:23037]     self._wrapped = Settings(settings_module)
+[Sun Apr 19 14:05:55.454390 2015] [:error] [pid 16898] [client 95.91.247.96:23037]   File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 92, in __init__
+[Sun Apr 19 14:05:55.454405 2015] [:error] [pid 16898] [client 95.91.247.96:23037]     mod = importlib.import_module(self.SETTINGS_MODULE)
+[Sun Apr 19 14:05:55.454415 2015] [:error] [pid 16898] [client 95.91.247.96:23037]   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+[Sun Apr 19 14:05:55.454460 2015] [:error] [pid 16898] [client 95.91.247.96:23037]     __import__(name)
+[Sun Apr 19 14:05:55.454481 2015] [:error] [pid 16898] [client 95.91.247.96:23037] ImportError: No module named myapp.settings
+[Sun Apr 19 12:07:23.800975 2015] [:error] [pid 16964] [client 95.91.247.96:23045] mod_wsgi (pid=16964): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Sun Apr 19 12:07:23.801349 2015] [:error] [pid 16964] [client 95.91.247.96:23045] Traceback (most recent call last):
+[Sun Apr 19 12:07:23.801370 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 170, in __call__
+[Sun Apr 19 12:07:23.801474 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     self.load_middleware()
+[Sun Apr 19 12:07:23.801487 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 50, in load_middleware
+[Sun Apr 19 12:07:23.801583 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     mw_class = import_string(middleware_path)
+[Sun Apr 19 12:07:23.801596 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_string
+[Sun Apr 19 12:07:23.801665 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     module = import_module(module_path)
+[Sun Apr 19 12:07:23.801677 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+[Sun Apr 19 12:07:23.801722 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     __import__(name)
+[Sun Apr 19 12:07:23.801734 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/middleware.py", line 3, in <module>
+[Sun Apr 19 12:07:23.801804 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     from django.contrib.auth.backends import RemoteUserBackend
+[Sun Apr 19 12:07:23.801815 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/backends.py", line 4, in <module>
+[Sun Apr 19 12:07:23.801884 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     from django.contrib.auth.models import Permission
+[Sun Apr 19 12:07:23.801903 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/models.py", line 41, in <module>
+[Sun Apr 19 12:07:23.802066 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     class Permission(models.Model):
+[Sun Apr 19 12:07:23.802080 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 139, in __new__
+[Sun Apr 19 12:07:23.802452 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     new_class.add_to_class('_meta', Options(meta, **kwargs))
+[Sun Apr 19 12:07:23.802465 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 324, in add_to_class
+[Sun Apr 19 12:07:23.802496 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     value.contribute_to_class(cls, name)
+[Sun Apr 19 12:07:23.802506 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/options.py", line 250, in contribute_to_class
+[Sun Apr 19 12:07:23.802714 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+[Sun Apr 19 12:07:23.802726 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/db/__init__.py", line 36, in __getattr__
+[Sun Apr 19 12:07:23.802779 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     return getattr(connections[DEFAULT_DB_ALIAS], item)
+[Sun Apr 19 12:07:23.802791 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/db/utils.py", line 240, in __getitem__
+[Sun Apr 19 12:07:23.802881 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     backend = load_backend(db['ENGINE'])
+[Sun Apr 19 12:07:23.802893 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/db/utils.py", line 111, in load_backend
+[Sun Apr 19 12:07:23.802910 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     return import_module('%s.base' % backend_name)
+[Sun Apr 19 12:07:23.802919 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+[Sun Apr 19 12:07:23.802933 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     __import__(name)
+[Sun Apr 19 12:07:23.802942 2015] [:error] [pid 16964] [client 95.91.247.96:23045]   File "/usr/local/lib/python2.7/dist-packages/django/db/backends/mysql/base.py", line 27, in <module>
+[Sun Apr 19 12:07:23.803088 2015] [:error] [pid 16964] [client 95.91.247.96:23045]     raise ImproperlyConfigured("Error loading MySQLdb module: %s" % e)
+[Sun Apr 19 12:07:23.803111 2015] [:error] [pid 16964] [client 95.91.247.96:23045] ImproperlyConfigured: Error loading MySQLdb module: No module named MySQLdb
+[Sun Apr 19 12:12:16.819618 2015] [:error] [pid 20424] [client 95.91.247.96:23047] mod_wsgi (pid=20424): Exception occurred processing WSGI script '/var/www/skrik_backend_android/apache.conf/web.wsgi'.
+[Sun Apr 19 12:12:16.819658 2015] [:error] [pid 20424] [client 95.91.247.96:23047] Traceback (most recent call last):
+[Sun Apr 19 12:12:16.819675 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 189, in __call__
+[Sun Apr 19 12:12:16.819795 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     response = self.get_response(request)
+[Sun Apr 19 12:12:16.819808 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 218, in get_response
+[Sun Apr 19 12:12:16.819939 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Sun Apr 19 12:12:16.819964 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 261, in handle_uncaught_exception
+[Sun Apr 19 12:12:16.820004 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return debug.technical_500_response(request, *exc_info)
+[Sun Apr 19 12:12:16.820017 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/views/debug.py", line 97, in technical_500_response
+[Sun Apr 19 12:12:16.821514 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     html = reporter.get_traceback_html()
+[Sun Apr 19 12:12:16.821529 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/views/debug.py", line 384, in get_traceback_html
+[Sun Apr 19 12:12:16.821547 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return t.render(c)
+[Sun Apr 19 12:12:16.821556 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 209, in render
+[Sun Apr 19 12:12:16.821849 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return self._render(context)
+[Sun Apr 19 12:12:16.821861 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 201, in _render
+[Sun Apr 19 12:12:16.821879 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return self.nodelist.render(context)
+[Sun Apr 19 12:12:16.821887 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 903, in render
+[Sun Apr 19 12:12:16.821902 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     bit = self.render_node(node, context)
+[Sun Apr 19 12:12:16.821911 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 79, in render_node
+[Sun Apr 19 12:12:16.821966 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return node.render(context)
+[Sun Apr 19 12:12:16.821978 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 89, in render
+[Sun Apr 19 12:12:16.821999 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     output = self.filter_expression.resolve(context)
+[Sun Apr 19 12:12:16.822008 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 674, in resolve
+[Sun Apr 19 12:12:16.822024 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     new_obj = func(obj, *arg_vals)
+[Sun Apr 19 12:12:16.822033 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/template/defaultfilters.py", line 774, in date
+[Sun Apr 19 12:12:16.822228 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return format(value, arg)
+[Sun Apr 19 12:12:16.822240 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/dateformat.py", line 345, in format
+[Sun Apr 19 12:12:16.822333 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return df.format(format_string)
+[Sun Apr 19 12:12:16.822345 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/dateformat.py", line 37, in format
+[Sun Apr 19 12:12:16.822361 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     pieces.append(force_text(getattr(self, piece)()))
+[Sun Apr 19 12:12:16.822370 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/dateformat.py", line 270, in r
+[Sun Apr 19 12:12:16.822384 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return self.format('D, j M Y H:i:s O')
+[Sun Apr 19 12:12:16.822393 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/dateformat.py", line 37, in format
+[Sun Apr 19 12:12:16.822407 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     pieces.append(force_text(getattr(self, piece)()))
+[Sun Apr 19 12:12:16.822421 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/encoding.py", line 92, in force_text
+[Sun Apr 19 12:12:16.822527 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     s = six.text_type(s)
+[Sun Apr 19 12:12:16.822548 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 141, in __text_cast
+[Sun Apr 19 12:12:16.822671 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return func(*self.__args, **self.__kw)
+[Sun Apr 19 12:12:16.822683 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/translation/__init__.py", line 84, in ugettext
+[Sun Apr 19 12:12:16.822764 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return _trans.ugettext(message)
+[Sun Apr 19 12:12:16.822775 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/translation/trans_real.py", line 323, in ugettext
+[Sun Apr 19 12:12:16.822958 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     return do_translate(message, 'ugettext')
+[Sun Apr 19 12:12:16.822970 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/translation/trans_real.py", line 300, in do_translate
+[Sun Apr 19 12:12:16.822998 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     _default = _default or translation(settings.LANGUAGE_CODE)
+[Sun Apr 19 12:12:16.823009 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/translation/trans_real.py", line 206, in translation
+[Sun Apr 19 12:12:16.823026 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     _translations[language] = DjangoTranslation(language)
+[Sun Apr 19 12:12:16.823035 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/translation/trans_real.py", line 116, in __init__
+[Sun Apr 19 12:12:16.823050 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     self._add_installed_apps_translations()
+[Sun Apr 19 12:12:16.823064 2015] [:error] [pid 20424] [client 95.91.247.96:23047]   File "/usr/local/lib/python2.7/dist-packages/django/utils/translation/trans_real.py", line 164, in _add_installed_apps_translations
+[Sun Apr 19 12:12:16.823080 2015] [:error] [pid 20424] [client 95.91.247.96:23047]     "The translation infrastructure cannot be initialized before the "
+[Sun Apr 19 12:12:16.823100 2015] [:error] [pid 20424] [client 95.91.247.96:23047] AppRegistryNotReady: The translation infrastructure cannot be initialized before the apps registry is ready. Check that you don't make non-lazy gettext calls at import time.
