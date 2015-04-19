@@ -9,12 +9,21 @@ What you will need to make this Backend work:
 #cp skrik.conf /etc/apache2/sites-available/skrik.conf
 #ln -s /etc/apache2/sites-available/skrik.conf /etc/apache2/sites-enabled/skrik.conf
 
-You might then want to modify that file to your needs. If this is the only web you'll be serving, you might as well want to do the following cleanup:
+- You might then want to modify that file to your needs. If this is the only web you'll be serving, you might as well want to do the following cleanup:
 # rm /etc/apache2/sites-enabled/000-default.conf
 
 - Load the Database structure and user privileges
 #myql -u root -p < skrik.sql
 
+
+
+
+
+- Rename settings.py.edit_me into settings.py, then edit it to change paths and set passwords...
+#mv skrik/settings.py.edit_me skrik/settings.py
+#vim settings.py
+
+ 
 cp apache2.conf apache2.conf.orig
 
 
