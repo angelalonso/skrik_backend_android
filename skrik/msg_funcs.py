@@ -14,25 +14,32 @@ def add_message(self, *args, **kwargs):
   userfrom = kwargs.pop('userfrom', None)
   userto = kwargs.pop('userto', None)
   timestamp = kwargs.pop('timestamp', None)
-
-  query = ('insert into skrik.msgs (userid_from,userid_to,message,status,timestamp) values ("' + userfrom + '","' + userto + '","' + message + '","sent",' + timestamp + ');')
-
-  result_aux = runquery(query)
-
-  query_id = ('SELECT max(id) from skrik.msgs;')
-  result_id = runquery(query_id)
+ 
+  ## This pre-check detects when one of the ids is false or non-existing
+  query_precheck = ('SELECT count(*) from skrik.users where id="' + userfrom + '" or id="' + userto + '" ;')
+  users_check = int(runquery(query_precheck)[0])
   
-  result = "received " + str(result_id[0])
+  if users_check > 1:
+    query_insert = ('insert into skrik.msgs (userid_from,userid_to,message,status,timestamp) values ("' + userfrom + '","' + userto + '","' + message + '","sent",' + timestamp + ');')
 
-  query_notify = ('SELECT reg_id FROM skrik.users WHERE id="' + userto + '";')
-  reg_id = runquery(query_notify)
+    result_insert = runquery(query_insert)
 
-  gcm = GCM("AIzaSyANSOhkcfA05dT63SoWD1cieLbRGspO9ns")
-  data = {'message': message, 'userfrom': userfrom}
+    query_getid = ('SELECT max(id) from skrik.msgs;')
+    result_id = runquery(query_getid)
+  
+    result = "received " + str(result_id[0])
 
-  if (str(reg_id[0]) !='4444') and (str(reg_id[0]) !=''):
-    gcm.plaintext_request(registration_id=reg_id[0], data=data)
+    query_notify = ('SELECT reg_id FROM skrik.users WHERE id="' + userto + '";')
+    reg_id = runquery(query_notify)
 
+    gcm = GCM("AIzaSyANSOhkcfA05dT63SoWD1cieLbRGspO9ns")
+    data = {'message': message, 'userfrom': userfrom}
+   
+    if (str(reg_id) !=''):
+      if (str(reg_id[0]) !='4444') and (str(reg_id[0]) !=''):
+        gcm.plaintext_request(registration_id=reg_id[0], data=data)
+  else:
+    result = "ERROR: One or both of the user ids not found"
 
   return HttpResponse(result)
 
